@@ -1,5 +1,7 @@
 package Stack;
 public class Main {
+
+    //O(n)
     public static String solution(int[] progresses, int[] speeds) {
         stackByArrayList progressesStack = new stackByArrayList(progresses);
         stackByArrayList speedsStack = new stackByArrayList(speeds);
@@ -23,7 +25,7 @@ public class Main {
         result +=(r+"]");
         return (result);
     }
-//O(n)
+
     public static void main(String[] args) {
         int[] progresses_1 = {55, 30, 93 };
         int[] speeds_1 ={5, 30, 1};

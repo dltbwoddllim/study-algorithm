@@ -15,6 +15,7 @@ public class stackByArrayList {
         t+=array.length;
     }
 
+    //O(1)
     public void push(int e){
         if (size() == array.length){
             return;
@@ -22,6 +23,8 @@ public class stackByArrayList {
         array[++t]=e;
         return;
     }
+
+    //O(1)
     public int pop(){
         if (isEmpty()){
             return 0;
@@ -32,15 +35,20 @@ public class stackByArrayList {
         return e;
     }
 
+    //O(1)
     public int top(){
         if (isEmpty()){
             return 0;
         }
         return array[t];
     }
+
+    //O(1)
     public boolean isEmpty(){
         return (t==-1);
     }
+
+    //O(1)
     public int size(){
         return t+1;
     }
