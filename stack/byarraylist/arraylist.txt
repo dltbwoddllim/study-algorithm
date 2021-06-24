@@ -1,0 +1,20 @@
+arraylist
+1.adt
+storing a sequence of arbitray objects.
+
+2.usage.
+search method is more frequent operation than add and remove method.
+
+3.main method.
+get : return element at index i
+set : replace element at index i 
+add : insert new element at index i 
+remove : remove element at index i 
++size, isEmpty
+
+4.big O
+get : O(1)
+set : O(1)
+add : O(n)
+remove : O(n)
+
