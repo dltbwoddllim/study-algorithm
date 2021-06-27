@@ -2,7 +2,7 @@ package Stack;
 public class Main {
 
     //O(n)
-    //https://programmers.co.kr/learn/courses/30/parts/12081 
+    //https://programmers.co.kr/learn/courses/30/parts/12081
     //기능 개발 문제
     public static String solution(int[] progresses, int[] speeds) {
         stackByArrayList progressesStack = new stackByArrayList(progresses);

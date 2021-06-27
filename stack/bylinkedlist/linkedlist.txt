@@ -1,0 +1,64 @@
+linked list.
+usage : usually using insertion, deletion 
+
+singly linked list
+adt : node = element + next node pointer/ head+tail pointer
+
+method : 
+size( ): Returns the number of elements
+isEmpty( ): Returns true if the list is empty, and false otherwise.
+first( ): Returns (but does not remove) the first element in the list.
+last( ): Returns (but does not remove) the last element in the list.
+addFirst(e): Adds a new element to the front of the list.
+addLast(e): Adds a new element to the end of the list.
+removeFirst( ): Removes and returns the first element of the list
+
+bigO : 
+size( ): o(1)
+isEmpty( ): o(1)
+first( ): o(1)
+last( ): o(1)
+addFirst(e): o(1)
+addLast(e):  o(1)
+removeFirst( ): o(1)
+
+doubly linked list
+adt : node = element + next/prev node pointer/ header+tailer pointer
+
+method : 
+size( ): Returns the number of elements in the list.
+isEmpty( ): Returns true if the list is empty, and false otherwise.
+first( ): Returns (but does not remove) the first element in the list.
+last( ): Returns (but does not remove) the last element in the list.
+addFirst(e): Adds a new element to the front of the list.
+addLast(e): Adds a new element to the end of the list.
+removeFirst( ): Removes and returns the first element of the list.
+removeLast( ): Removes and returns the last element of the list.
+
+bigO : 
+size( ): o(1)
+isEmpty( ): o(1)
+first( ): o(1)
+last( ): o(1)
+addFirst(e): o(1)
+addLast(e):  o(1)
+removeFirst( ): o(1)
+*removeLast( ): o(1)
+
+
+
+circly linked list
+adt : 
+node = element + next node pointer
+tail pointer
+last node next node is head
+rotate = first node become last node
+
+usage : operating system
+method : 
+same as singly
++rotate
+
+bigO : 
+same as singly
+rotate : o(1)
