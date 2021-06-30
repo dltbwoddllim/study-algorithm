@@ -1,7 +1,7 @@
 package Stack.ByArrayList;
 //프로그래머스 스택/큐 1번 문제
 //insertion, deletion이 많이 쓰이는 것은 아니기 때문에 arraylist로 구현하는 것도 괜찮다.
-public class SolutionByStackArrayList_1_1 {
+public class Solution {
     public int pop(int[] array,int t){
         if (isEmpty(array)){
             return 0;
