@@ -1,0 +1,83 @@
+내 풀이 결과 : 
+테스트 1 〉	통과 (0.04ms, 52.5MB)
+테스트 2 〉	통과 (0.07ms, 52.3MB)
+테스트 3 〉	통과 (0.06ms, 52.6MB)
+테스트 4 〉	통과 (0.04ms, 52.4MB)
+테스트 5 〉	통과 (0.04ms, 52.8MB)
+테스트 6 〉	통과 (0.04ms, 52MB)
+테스트 7 〉	통과 (0.06ms, 52.8MB)
+테스트 8 〉	통과 (0.04ms, 53.9MB)
+테스트 9 〉	통과 (0.05ms, 52.3MB)
+테스트 10 〉	통과 (0.05ms, 52.1MB)
+테스트 11 〉	통과 (0.03ms, 52.5MB)
+
+import java.util.ArrayList;
+import java.util.Arrays;
+class Solution {
+    public int[] solution(int[] progresses, int[] speeds) {
+        int[] dayOfend = new int[100];
+        int day = -1;
+        for(int i=0; i<progresses.length; i++) {
+            while(progresses[i] + (day*speeds[i]) < 100) {
+                day++;
+            }
+            dayOfend[day]++;
+        }
+        return Arrays.stream(dayOfend).filter(i -> i!=0).toArray();
+    }
+}
+다른 풀이_1 : 
+테스트 1 〉	통과 (25.49ms, 52.6MB)
+테스트 2 〉	통과 (3.76ms, 52.8MB)
+테스트 3 〉	통과 (7.69ms, 52.9MB)
+테스트 4 〉	통과 (6.80ms, 52.6MB)
+테스트 5 〉	통과 (4.59ms, 52.2MB)
+테스트 6 〉	통과 (6.90ms, 52.6MB)
+테스트 7 〉	통과 (4.92ms, 52.9MB)
+테스트 8 〉	통과 (4.12ms, 53.6MB)
+테스트 9 〉	통과 (4.07ms, 52.8MB)
+테스트 10 〉	통과 (4.63ms, 52.1MB)
+테스트 11 〉	통과 (10.12ms, 52.7MB)
+
+다른 풀이_2 :
+import java.util.*;
+
+class Solution {
+    public int[] solution(int[] progresses, int[] speeds) {
+        Queue<Integer> q = new LinkedList<>();
+        List<Integer> answerList = new ArrayList<>();
+
+        for (int i = 0; i < speeds.length; i++) {
+            double remain = (100 - progresses[i]) / (double) speeds[i];
+            int date = (int) Math.ceil(remain);
+
+            if (!q.isEmpty() && q.peek() < date) {
+                answerList.add(q.size());
+                q.clear();
+            }
+
+            q.offer(date);
+        }
+
+        answerList.add(q.size());
+
+        int[] answer = new int[answerList.size()];
+
+        for (int i = 0; i < answer.length; i++) {
+            answer[i] = answerList.get(i);
+        }
+
+        return answer;
+    }
+}
+테스트 1 〉	통과 (0.44ms, 52.2MB)
+테스트 2 〉	통과 (0.62ms, 52.3MB)
+테스트 3 〉	통과 (0.57ms, 52.6MB)
+테스트 4 〉	통과 (2.41ms, 52.2MB)
+테스트 5 〉	통과 (0.46ms, 52.3MB)
+테스트 6 〉	통과 (1.85ms, 52MB)
+테스트 7 〉	통과 (0.58ms, 52.4MB)
+테스트 8 〉	통과 (0.43ms, 51.7MB)
+테스트 9 〉	통과 (0.48ms, 52.3MB)
+테스트 10 〉	통과 (0.57ms, 52MB)
+테스트 11 〉	통과 (0.73ms, 51.9MB)

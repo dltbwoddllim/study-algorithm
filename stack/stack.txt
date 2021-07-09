@@ -1,8 +1,22 @@
 stack
 1.usage
+page - visited history in a web browser
+text editor
+chain of method calls in jvm
+Auxiliary data structure
 
-2.adt
+2.adt : last in first out 
 
-3.method
+3.method : 
+push : insert 
+pop : remove last inserted element
+top : return last inserted element
+size
+isEmpty
 
-4.bigO
+4.bigO(by arraylist or linked list)
+push : o(1) 
+pop : o(1)
+top : o(1)
+size : o(1)
+isEmpty : o(1)
