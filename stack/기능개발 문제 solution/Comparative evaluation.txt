@@ -41,7 +41,6 @@ class Solution {
 
 다른 풀이_2 :
 import java.util.*;
-
 class Solution {
     public int[] solution(int[] progresses, int[] speeds) {
         Queue<Integer> q = new LinkedList<>();
