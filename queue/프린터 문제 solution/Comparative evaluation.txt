@@ -1,0 +1,139 @@
+내풀이 결과 : 
+테스트 1 〉	통과 (3.69ms, 52.6MB)
+테스트 2 〉	통과 (2.86ms, 52.7MB)
+테스트 3 〉	통과 (0.66ms, 52.5MB)
+테스트 4 〉	통과 (2.23ms, 52.1MB)
+테스트 5 〉	통과 (0.26ms, 52.7MB)
+테스트 6 〉	통과 (1.31ms, 54MB)
+테스트 7 〉	통과 (1.11ms, 52.2MB)
+테스트 8 〉	통과 (2.17ms, 52MB)
+테스트 9 〉	통과 (0.73ms, 54.4MB)
+테스트 10 〉	통과 (1.26ms, 52.5MB)
+테스트 11 〉	통과 (2.66ms, 52MB)
+테스트 12 〉	통과 (0.42ms, 52.4MB)
+테스트 13 〉	통과 (2.44ms, 53.3MB)
+테스트 14 〉	통과 (0.26ms, 51.9MB)
+테스트 15 〉	통과 (0.40ms, 53.1MB)
+테스트 16 〉	통과 (0.70ms, 52.9MB)
+테스트 17 〉	통과 (2.61ms, 52.4MB)
+테스트 18 〉	통과 (0.52ms, 53.5MB)
+테스트 19 〉	통과 (2.17ms, 53MB)
+테스트 20 〉	통과 (0.93ms, 52.3MB)
+
+java linkedlist class사용한 풀이 결과 : 
+
+import java.util.*;
+
+class Solution {
+    public int solution(int[] priorities, int location) {
+        int answer = 0;
+        int l = location;
+
+        Queue<Integer> que = new LinkedList<Integer>();
+        for(int i : priorities){
+            que.add(i);
+        }
+
+        Arrays.sort(priorities);
+        int size = priorities.length-1;
+
+
+        while(!que.isEmpty()){
+            Integer i = que.poll();
+            if(i == priorities[size - answer]){
+                answer++;
+                l--;
+                if(l <0)
+                    break;
+            }else{
+                que.add(i);
+                l--;
+                if(l<0)
+                    l=que.size()-1;
+            }
+        }
+
+        return answer;
+    }
+}
+
+테스트 1 〉	통과 (1.16ms, 52MB)
+테스트 2 〉	통과 (1.76ms, 52.8MB)
+테스트 3 〉	통과 (0.66ms, 52.1MB)
+테스트 4 〉	통과 (1.22ms, 52.1MB)
+테스트 5 〉	통과 (0.40ms, 52.9MB)
+테스트 6 〉	통과 (0.68ms, 52.7MB)
+테스트 7 〉	통과 (0.67ms, 52.8MB)
+테스트 8 〉	통과 (0.93ms, 52.3MB)
+테스트 9 〉	통과 (0.66ms, 52.8MB)
+테스트 10 〉	통과 (0.75ms, 52.4MB)
+테스트 11 〉	통과 (1.00ms, 52.6MB)
+테스트 12 〉	통과 (0.60ms, 52.8MB)
+테스트 13 〉	통과 (0.95ms, 52.7MB)
+테스트 14 〉	통과 (0.42ms, 52.2MB)
+테스트 15 〉	통과 (0.44ms, 53.1MB)
+테스트 16 〉	통과 (0.61ms, 52.1MB)
+테스트 17 〉	통과 (0.95ms, 52.1MB)
+테스트 18 〉	통과 (2.43ms, 52.3MB)
+테스트 19 〉	통과 (1.11ms, 53.3MB)
+테스트 20 〉	통과 (0.68ms, 52.3MB)
+
+javaarraylist 클래스 사용한 결과
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Solution {
+    public int solution(int[] priorities, int location) {
+    List<Integer> list = new ArrayList<>();
+    for (int priority : priorities) {
+      list.add(priority);
+    }
+
+    int turn = 1;
+    while (!list.isEmpty()) {
+      final Integer j = list.get(0);
+      if (list.stream().anyMatch(v -> j < v)) {
+        list.add(list.remove(0));
+      } else {
+        if (location == 0) {
+          return turn;
+        }
+        list.remove(0);
+        turn++;
+      }
+
+      if (location > 0) {
+        location--;
+      } else {
+        location = list.size() - 1;
+      }
+    }
+
+    throw new IllegalArgumentException();
+  }
+}
+테스트 1 〉	통과 (3.05ms, 52.2MB)
+테스트 2 〉	통과 (5.82ms, 53.3MB)
+테스트 3 〉	통과 (1.72ms, 52.6MB)
+테스트 4 〉	통과 (3.56ms, 52.4MB)
+테스트 5 〉	통과 (1.55ms, 53.9MB)
+테스트 6 〉	통과 (2.84ms, 53.3MB)
+테스트 7 〉	통과 (2.49ms, 52.1MB)
+테스트 8 〉	통과 (10.30ms, 53.2MB)
+테스트 9 〉	통과 (1.44ms, 52.4MB)
+테스트 10 〉	통과 (2.94ms, 52.8MB)
+테스트 11 〉	통과 (5.20ms, 52MB)
+테스트 12 〉	통과 (1.88ms, 52.3MB)
+테스트 13 〉	통과 (4.57ms, 52.9MB)
+테스트 14 〉	통과 (1.50ms, 51.7MB)
+테스트 15 〉	통과 (1.59ms, 52.7MB)
+테스트 16 〉	통과 (2.14ms, 52.4MB)
+테스트 17 〉	통과 (13.68ms, 52.3MB)
+테스트 18 〉	통과 (1.90ms, 55.2MB)
+테스트 19 〉	통과 (15.34ms, 52.3MB)
+테스트 20 〉	통과 (2.11ms, 53.7MB)
+
+=>insertion과 deletion method를 수행하는 횟수가 많아 
+=>ArrayList보다 linkedlist가 확실히 효율적이다.
+

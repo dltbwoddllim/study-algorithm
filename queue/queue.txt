@@ -1,0 +1,19 @@
+queue
+1.usage
+Waiting lists
+access to shared resource
+multiprogramming
+
+2.adt : first-in first-out
+
+3.method
+enqueue : insert element at the end of the queue
+dequeue : remove element at the start of the queue
+front : return at the start of the queue
+size, isEmpty
+
+4.bigO
+enqueue : o(1)
+dequeue : o(1)
+
+
