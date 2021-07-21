@@ -57,3 +57,17 @@ heap sort를 사용하면 o(n*logn)이다.
 테스트 5 〉	통과 (1421.30ms, 117MB)
 
 내가짠 heap과 자바에 있는 heap 비교 분석
+node로 구현했고 자바에 있는 PriorityQueue는 array로 구현했다.
+구체적으로 비교해 보면 PriorityQueue로 위의 문제를 풀 때 array의 크기를 알고 있기 때문에 array의 크기를 중간에 늘릴 필요가 없다.
+즉 o(n)시간이 드는 grow함수를 사용할 필요가 없다.
+add함수는 offer를 호출하고 offer는 siftup을 호출한다.
+siftup은 siftUpComparable를 호출한다.
+siftUpComparable는 최대 logn번 진행된다.
+때문에 add함수의 logn =>(logn)이다.
+반면 내가 만든 linkedlist를 활용한 heap은
+swapup(o(logn))+getNodeByIndex(o(logn))으로 2logn이다.
+빅오표기는 같지만 연산에서 더 많은 시간이 사용된다.
+remove함수를 비교하면 다음과 같다.
+자바에 있는 것으로 했을 경우 poll을 호출하는데 이것은 logn 시간이 든다.
+반면 내 풀이는 swapDown(o(logn))+getNodeByIndex(o(logn))*2으로 빅오 표기는 같지만 더 많은 시간이 든다.
+
